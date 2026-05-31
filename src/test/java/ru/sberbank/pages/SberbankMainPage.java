@@ -10,7 +10,6 @@ import ru.sberbank.helpers.GlobalVariables;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 
 public class SberbankMainPage {
 
@@ -27,7 +26,7 @@ public class SberbankMainPage {
 
     @FindBy(id = "user-name")
     @CacheLookup
-    private WebElement usernameField;
+    private WebElement mainPage;
 
     @FindBy(id = "password")
     @CacheLookup
@@ -37,50 +36,64 @@ public class SberbankMainPage {
     @CacheLookup
     private WebElement loginBtn;
 
-    @FindBy(xpath = "//*[@class='bot_column']")
-    @CacheLookup
-    private List<WebElement> botImg;
+    private String sberbankOnlineButton = "//*[@class='header-widget-sbol-button__main']";
+
+    private String sberbankMainPanel = "//*[@class='header-widget-navigation-bar header-widget-navigation-bar_segments']";
+
+    private String sberbankOnlineEnterButton = "//button[@aria-label='По логину и паролю']";
+
+    private String sberbankOnlineMainPanel = "//div[@id='layout-content']";
+
+    private String sberbankOnlineStageHeader = "//div/h1[@id='stage-header']";
+
+    private String inputLoginField = "//input[@data-testid='input-text']";
+
+    private String inputPasswordField = "//input[@data-testid='input-password']";
+
+    private String enterSberbankButton = "//button[@data-testid='button-continue']";
+
+    private String wrongPasswordMessage = "//div[@id='password-error']";
+
 
     @FindBy(xpath = "//*[@data-test='error']")
     @CacheLookup
     private List<WebElement> errorMessage;
 
-    public void seeLogoImg(){
-        if(logoImg.size() > 0){
-            System.out.println("Sauce Lab Logo displayed!");
-        }
+
+    public String getSberbankOnlineButton() {
+        return sberbankOnlineButton;
     }
 
-    public void seeBotImg(){
-        if(botImg.size() > 0){
-            System.out.println("Sauce Lab Bot Image displayed!");
-        }
+    public String getSberbankMainPanel() {
+        return sberbankMainPanel;
     }
 
-    public void clearUsernameField(){
-        usernameField.clear();
+    public String getSberbankOnlineMainPanel() {
+        return sberbankOnlineMainPanel;
     }
 
-    public void inputUsernameField(String username){
-        usernameField.sendKeys(username);
+    public String getSberbankOnlineEnterButton() {
+        return sberbankOnlineEnterButton;
     }
 
-    public void clearPasswordField(){
-        passwordField.clear();
+    public String getSberbankOnlineStageHeader() {
+        return sberbankOnlineStageHeader;
     }
 
-    public void inputPasswordField(String password){
-        passwordField.sendKeys(password);
+    public String getInputLoginField() {
+        return inputLoginField;
     }
 
-    public void clickLoginBtn(){
-        loginBtn.click();
+    public String getInputPasswordField() {
+        return inputPasswordField;
     }
 
-    public void verifyWarningMessage(String message){
-        if(errorMessage.size() > 0){
-            System.out.println("Expected: " + message);
-            assertEquals(message,errorMessage.get(0).getText());
-        }
+    public String getEnterSberbankButton() {
+        return enterSberbankButton;
     }
+
+    public String getWrongPasswordMessage() {
+        return wrongPasswordMessage;
+    }
+
 }

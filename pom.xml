@@ -15,7 +15,7 @@
         <junit.version>6.1.0</junit.version>
         <cucumber.version>7.34.3</cucumber.version>
         <gherkin.version>39.1.0</gherkin.version>
-        <selenium.version>4.25.0</selenium.version>
+        <selenium.version>4.44.0</selenium.version>
         <selenium.chrome.driver>4.44.0</selenium.chrome.driver>
     </properties>
 
@@ -95,12 +95,6 @@
             <version>${cucumber.version}</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>gherkin</artifactId>-->
-<!--            <version>39.1.0</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
     </dependencies>
 
 
@@ -112,6 +106,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.0</version>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-site-plugin</artifactId>-->
+<!--                <version>3.22.0</version>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

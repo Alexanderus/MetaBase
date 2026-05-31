@@ -15,9 +15,6 @@ public class BrowserSetup {
             case "chrome":
                 capabilities.ChromeDriver();
                 break;
-            case "edge":
-                capabilities.EdgeDriver();
-                break;
             case "firefox":
                 capabilities.FirefoxDriver();
                 break;
